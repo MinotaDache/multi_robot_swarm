@@ -11,6 +11,9 @@ def generate_launch_description():
     
     urdf_file = os.path.join(get_package_share_path('amr_swarming_description'), 
                              'urdf', 'mrobot.urdf')
+    rviz_config_path = os.path.join(get_package_share_path('amr_swarming_description'),
+                                    'rviz', 'urdf_config.rviz')
+
     robot_description = ParameterValue(Command(['xacro ', urdf_file]), value_type=str)
 
     robot_state_publisher_node = Node(
@@ -27,7 +30,8 @@ def generate_launch_description():
 
     rviz2_node = Node(
         package="rviz2",
-        executable="rviz2"
+        executable="rviz2",
+        arguments=['-d', rviz_config_path]
 
     )   
 
