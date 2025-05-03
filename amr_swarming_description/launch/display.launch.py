@@ -8,9 +8,13 @@ from ament_index_python.packages import get_package_share_path
 # we first define the launch description
 
 def generate_launch_description():
-    
+
+    # Get the path of urdf file with out xacro     
+    """urdf_file = os.path.join(get_package_share_path('amr_swarming_description'), 
+                             'urdf', 'mrobot.urdf')"""
+    # get the urdf file with xacro modifications
     urdf_file = os.path.join(get_package_share_path('amr_swarming_description'), 
-                             'urdf', 'mrobot.urdf')
+                             'urdf', 'robot.urdf.xacro')
     rviz_config_path = os.path.join(get_package_share_path('amr_swarming_description'),
                                     'rviz', 'urdf_config.rviz')
 
