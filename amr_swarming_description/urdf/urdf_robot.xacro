@@ -11,7 +11,7 @@
 
     <!-- BASE LINK (CHASSIS)-->
     <link name = "base_footprint"/>
-
+    
     <link name = "base_link">
         <visual>
             <geometry>
